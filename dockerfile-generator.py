@@ -1,11 +1,19 @@
-def writeFile():
-    with open("Dockerfile", "w+") as external_file:
+
+
+def writeFile(dockerfile):
+    with open("Dockerfile", "w+") as dockerfile:
         add_text = "FROM base-image"
-        print(add_text, file=external_file)
-        external_file.close()
+        print(add_text, file=dockerfile)
+        dockerfile.close()
+
+def readFile(dockerfile):
+    with open(dockerfile, 'r') as dockerfile:
+        print(dockerfile.read())
 
 def main():
-    writeFile()
+    dockerfile_temp = input("Dockerfile template: ")
+    path_file = dockerfile_temp + "/Dockerfile"
+    readFile(path_file)
 
 # If name is main, run main func
 if __name__ == '__main__':
