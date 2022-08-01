@@ -15,6 +15,5 @@ def main():
     path_file = dockerfile_temp + "/Dockerfile"
     readFile(path_file)
 
-# If name is main, run main func
 if __name__ == '__main__':
     main()
